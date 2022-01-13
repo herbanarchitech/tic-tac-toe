@@ -6,7 +6,7 @@ class Square extends React.Component {
   render() {
     return (
       <button className="square">
-        {/* TODO */}
+        {this.props.value}
       </button>
     );
   }
@@ -15,7 +15,7 @@ class Square extends React.Component {
 class Board extends React.Component {
 
 	renderSquare(i) {
-		return < Square />;
+		return < Square value={i}  />;
 	}
 
 	render() {
@@ -23,6 +23,7 @@ class Board extends React.Component {
 
 		return (
 		 <div> 
+			<h2> Tic-Tac-Toe </h2>
 			<div className="status">{status}</div>
 			<div className="board-row">
 			  {this.renderSquare(0)}
@@ -47,6 +48,7 @@ class Board extends React.Component {
 class Game extends React.Component { 
 	render() {
 		return(
+			
 		   <div className="game">
 			<div className="game-board">
 			   <Board />
